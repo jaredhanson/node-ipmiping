@@ -63,15 +63,15 @@ IPMIPing.prototype.ping = function(ip, cb)  {
         if (err) {
             cb('error', {error:err, bytes:bytes});
         } else {
-            cb('sent', {error:err, bytes:bytes});
+            //cb('sent', {error:err, bytes:bytes});
         }
     });
     var makeTO = function() {
         return function() {
-            cb('timeout', {ip:ip });
+            //cb('timeout', {ip:ip });
         };
     };
-    setTimeout(makeTO(), 3000);
+    setTimeout(makeTO(), 1000000); // XXX
 };
 
 IPMIPing.prototype.finish = function(ip, cb)  {
